@@ -30,7 +30,7 @@ function getInfo(server) {
 		fetchAbrt.abort();
 	}
   fetchAbrt = new AbortController();
-  fetch(`/nte_info_${server}.json`, { signal: fetchAbrt.signal })
+  fetch(`/nte_info_${server}.json?t=${Date.now()}`, { signal: fetchAbrt.signal })
     .then(r => r.json())
     .then(setInfo);
 }
