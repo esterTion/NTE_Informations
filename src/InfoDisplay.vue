@@ -1,7 +1,7 @@
 <template>
   <a-row>
-    <a-col :span="6">
-      <a-list :data-source="infoList" class="info-list scroll">
+    <a-col :span="6" class="scroll">
+      <a-list :data-source="infoList" class="info-list">
 				<template #renderItem="{ item }">
 					<a-list-item class="info-title-item" :class="{ selected: item.selected }"
 						@click="selectInfo(item)"
@@ -30,6 +30,7 @@ import {
 import ImageContent from './content/ImageContent.vue';
 import TextContent from './content/TextContent.vue';
 import FormContent from './content/FormContent.vue';
+import HyperlinkButton from './content/HyperlinkContent.vue';
 import UnknownContent from './content/UnknownContent.vue';
 
 const props = defineProps(['infos']);
@@ -57,6 +58,9 @@ function selectInfo(item) {
 			case 'Form': {
 				return [markRaw(FormContent), i];
 			} // case
+			case 'HyperlinkButton': {
+				return [markRaw(HyperlinkButton), i];
+			}
 		}
 		return [markRaw(UnknownContent), i];
 	});
@@ -72,7 +76,7 @@ watch(() => props.infos, () => {
 	border-right: 1px solid #c8c8c8;
 }
 .scroll {
-	height: 100vh;
+	height: 100%;
 	overflow: hidden auto;
 }
 .info-title-item {
