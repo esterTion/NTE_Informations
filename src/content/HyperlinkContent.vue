@@ -1,5 +1,5 @@
 <template>
-	<a :href="props.data.Content.Hyperlink">
+	<a :href="props.data.Content.Hyperlink" target="_blank" referrerpolicy="no-referrer">
 		<div class="link-button">
 			{{ props.data.Content.DisplayText }}
 		</div>
@@ -10,7 +10,7 @@ const props = defineProps(['data']);
 </script>
 <style scoped>
 .link-button {
-	width: calc(100% - 18px);
+	width: calc(100% - 20px);
 	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
