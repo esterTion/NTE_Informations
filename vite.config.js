@@ -22,6 +22,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/nte_info_cn\.json/, ''),
       },
+      '/nte_info_global.json': {
+        target: 'https://plist-yhglo.perfectworld.com/notice_test5/zh-Hans/Notice/0/Notice.json',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^.+/, ''),
+      },
     },
   },
   build: {
