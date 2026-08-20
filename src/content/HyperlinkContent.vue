@@ -11,7 +11,8 @@ const props = defineProps(['data']);
 <style scoped>
 .link-button {
 	width: calc(100% - 20px);
-	padding: 10px;
+	padding: 8px 10px;
+	margin: 5px 0;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	background-color: #f5f5f5;
