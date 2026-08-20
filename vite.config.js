@@ -33,6 +33,16 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^.+/, ''),
       },
+      '/nte_info_global_en.json': {
+        target: 'https://plist-yhglo.perfectworld.com/notice_test5/en/Notice/0/Notice.json',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^.+/, ''),
+      },
+      '/nte_info_global_ja.json': {
+        target: 'https://plist-yhglo.perfectworld.com/notice_test5/ja/Notice/0/Notice.json',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^.+/, ''),
+      },
     },
   },
   build: {

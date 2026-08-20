@@ -1,5 +1,5 @@
 <template>
-	<table>
+	<div class="table-container"><table>
 		<thead>
 			<th v-for="(name, index) in tableHeader" :key="index">
 				{{ name }}
@@ -10,7 +10,7 @@
 				<td v-for="(cell, index) in row" :key="index">{{ cell }}</td>
 			</tr>
 		</tbody>
-	</table>
+	</table></div>
 </template>
 <script setup>
 import { watch, ref } from 'vue';
@@ -25,3 +25,12 @@ watch(() => props.data, () => {
 	tableContent.value = rows.map(i => i.split(','));
 }, { immediate: true, deep: true });
 </script>
+<style scoped>
+.table-container {
+	width: 100%;
+	overflow: auto;
+}
+tr:nth-last-of-type(2n+1) {
+	background-color: #e5e5e5;
+}
+</style>

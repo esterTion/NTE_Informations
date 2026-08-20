@@ -1,6 +1,6 @@
 <template>
   <a-row>
-    <a-col :span="6" class="scroll">
+    <a-col :xs="10" :sm="8" :md="6" class="scroll">
       <a-list :data-source="infoList" class="info-list">
 				<template #renderItem="{ item }">
 					<a-list-item class="info-title-item" :class="{ selected: item.selected }"
@@ -11,7 +11,7 @@
 				</template>
 			</a-list>
     </a-col>
-    <a-col :span="18" style="padding: 5px" class="scroll">
+    <a-col :xs="14" :sm="16" :md="18" tyle="padding: 5px" class="scroll">
 			<template v-for="(item, index) in infoContent" :key="index">
 				<component :is="item[0]" :data="item[1]" />
 			</template>

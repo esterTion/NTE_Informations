@@ -1,11 +1,13 @@
 <template>
   <div class="grid">
-    <a-tabs v-model:activeKey="server">
+    <a-tabs v-model:activeKey="server" :tabBarStyle="{ padding: '0 10px' }">
       <a-tab-pane key="cn" tab="CN" />
-      <a-tab-pane key="global" tab="Global" />
+      <a-tab-pane key="global" tab="Global(ZH)" />
+      <a-tab-pane key="global_en" tab="Global(EN)" />
+      <a-tab-pane key="global_ja" tab="Global(JA)" />
     </a-tabs>
     <a-spin :spinning="loading">
-      <a-tabs v-model:activeKey="activeTab">
+      <a-tabs v-model:activeKey="activeTab" :tabBarStyle="{ padding: '0 10px' }">
         <a-tab-pane :key="1" tab="Info" />
         <a-tab-pane :key="0" tab="Event" />
       </a-tabs>
@@ -50,12 +52,12 @@ watch(server, (s) => getInfo(s), { immediate: true });
 .grid {
   max-width: 800px;
   margin: 0 auto;
-  height: 100vh;
+  height: 100dvh;
   display: grid;
   grid-template-rows: 50px 50px 1fr;
 }
 .info-display {
-  height: calc(100vh - 100px);
+  height: calc(100dvh - 120px);
 }
 </style>
 <style>
