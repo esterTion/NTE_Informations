@@ -11,7 +11,7 @@
 				</template>
 			</a-list>
     </a-col>
-    <a-col :xs="14" :sm="16" :md="18" tyle="padding: 5px" class="scroll">
+    <a-col :xs="14" :sm="16" :md="18" style="padding: 5px" class="scroll">
 			<template v-for="(item, index) in infoContent" :key="index">
 				<component :is="item[0]" :data="item[1]" />
 			</template>
